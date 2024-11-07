@@ -3,7 +3,7 @@ Steps
 1.	LOCAL SYSTEM : ssh-keygen -t rsa -b 2048
 ( Note : When asked where to save the keys, press Enter to save to the default location (~/.ssh/id_rsa).)
 
-2.	REMOTE SYSTEM : ssh-copy-id username@remote_ip_address
+2.	LOCAL SYSTEM : ssh-copy-id username@remote_ip_address
     Note: To find
                   - Username of the remote system (whoami)
                   - IP address of the remote system (hostname -I)
