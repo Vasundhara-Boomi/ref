@@ -5,6 +5,7 @@ Docker Installation:
         - sudo systemctl start docker
         - sudo systemctl enable docker
 
+- Verify installation : docker --version
 
 Create flask-App:
 - mkdir flaskapp
@@ -39,6 +40,6 @@ Dockerfile: (no extension)
 
 Push the Docker Image to Docker Hub:
         - docker login
-        - docker tag flask-webapp:latest <dockerhub-username>/flask-webapp:latest
-        - docker push <dockerhub-username>/flask-webapp:latest
+        - docker tag flaskapp:latest <dockerhub-username>/flaskapp:latest
+        - docker push <dockerhub-username>/flaskapp:latest
 
