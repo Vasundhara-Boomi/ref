@@ -21,7 +21,8 @@ app.py:
 
 - pip freeze > requirements.txt (Flask == 2.0.1)
 
-Dockerfile:
+Dockerfile: (no extension)
+
           FROM python:3.9
           WORKDIR /app
           COPY . /app
