@@ -1,0 +1,43 @@
+Docker Installation:
+        - sudo apt update
+        - sudo apt install docker.io
+                - Enter "y"
+        - sudo systemctl start docker
+        - sudo systemctl enable docker
+
+
+Create flask-App:
+- mkdir flaskapp
+- cd flaskapp
+
+app.py:
+        from flask import Flask
+        app = Flask(__name__)
+        @app.route('/')
+        def hello():
+            return "Hello, this is a Flask web server!"
+        if __name__ == "__main__":
+            app.run(host='0.0.0.0', port=5000)
+
+- pip freeze > requirements.txt (Flask == 2.0.1)
+
+Dockerfile:
+          FROM python:3.9
+          WORKDIR /app
+          COPY . /app
+          RUN pip install --no-cache-dir -r requirements.txt
+          EXPOSE 5000
+          ENV NAME FlaskApp
+          CMD ["python", "app.py"]
+
+- Build:
+        sudo docker build -t flaskapp
+- Run: 
+        sudo docker run -p 5000:5000 flaskapp
+
+
+Push the Docker Image to Docker Hub:
+        - docker login
+        - docker tag flask-webapp:latest <dockerhub-username>/flask-webapp:latest
+        - docker push <dockerhub-username>/flask-webapp:latest
+
