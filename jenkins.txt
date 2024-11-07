@@ -1,0 +1,25 @@
+- JDK path configuration (verify: java -version)
+- Jenkins website -> download jenkins.war file (LTS)
+- Go to the directory in .war file is downloaded -> Open cmd
+- java -jar jenkins.war --enable-future-java
+- Successful installation 
+        -> Note admin pswd
+- Go to localhost:8080 (enter pswd)
+- select "suggested packages"
+- create user 
+        -> directed to dashboard
+- New Item 
+        -> free style proj 
+                -> click "OK"
+- Enter description 
+        -> Source Code management 
+                -> select GIT
+- URL: Github repo url
+        -> Add + (Jenkins) - Enter github Username and pswd
+- Specify branch (*/main)
+- Build step
+        -> Add (window batch command)
+                ->Enter: javac <filename>
+                         java <classname>
+- Save 
+- Build Now
