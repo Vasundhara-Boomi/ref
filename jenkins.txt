@@ -4,7 +4,7 @@
 - java -jar jenkins.war --enable-future-java
 - Successful installation 
         -> Note admin pswd
-- Go to localhost:8080 (enter pswd)
+- Go to http://localhost:8080 (enter pswd)
 - select "suggested packages"
 - create user 
         -> directed to dashboard
