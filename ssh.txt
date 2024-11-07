@@ -1,0 +1,17 @@
+Steps
+
+1.	LOCAL SYSTEM : ssh-keygen -t rsa -b 2048
+( Note : When asked where to save the keys, press Enter to save to the default location (~/.ssh/id_rsa).)
+
+2.	REMOTE SYSTEM : ssh-copy-id username@remote_ip_address
+    Note: To find
+                  - Username of the remote system (whoami)
+                  - IP address of the remote system (hostname -I)
+
+3.	LOCAL SYSTEM: 
+    - To log into the remote system: ssh username@remote_ip_address
+
+    - echo 'echo "hello SSH"' > ~/test_script.sh
+    - chmod +x ~/test_script.sh
+    
+    - Run the shell script: ssh username@remote_ip_address 'bash ~/test_script.sh'
