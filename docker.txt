@@ -34,6 +34,9 @@ Dockerfile: (no extension)
 
 - Build:
         sudo docker build -t flaskapp .
+
+- Rebuild:
+        sudo docker build --no-cache -t flaskapp .
 - Run: 
         sudo docker run -p 5000:5000 flaskapp
 
