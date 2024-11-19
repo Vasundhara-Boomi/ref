@@ -33,7 +33,7 @@ Dockerfile: (no extension)
           CMD ["python", "app.py"]
 
 - Build:
-        sudo docker build -t flaskapp
+        sudo docker build -t flaskapp .
 - Run: 
         sudo docker run -p 5000:5000 flaskapp
 
