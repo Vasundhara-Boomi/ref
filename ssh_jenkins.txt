@@ -2,8 +2,15 @@ Configure Jenkins to Run the Script via SSH
 
 Open Jenkins in your web browser.
             - Navigate to Manage Jenkins > Manage Plugins.
-            - In the Available tab, search for "SSH" and locate the SSH Plugin.
-            - Click Install without restart (or Download now and install after restart if a restart is required).
+            - In the Available tab, search for "SSH" and click the SSH Plugin.
+            - Manage Jenkins 
+                    -> Tools and Actions -> Jenkins CLI
+                    -> Download jenkins-cli.jar
+                    -> java -jar jenkins-cli.jar -s http://localhost:8080 -auth your_username:your_api_token install-plugin ssh:158.ve2a_e90fb_7319
+
+                    -> API Token
+                            -> Click Username -> Security -> Generate new Token
+
 
 Configure SSH in Jenkins:
             - Go to Manage Jenkins > Configure System.
