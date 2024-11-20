@@ -7,7 +7,7 @@ Open Jenkins in your web browser.
                     -> Tools and Actions -> Jenkins CLI
                     -> Download jenkins-cli.jar
                     -> java -jar jenkins-cli.jar -s http://localhost:8080 -auth your_username:your_api_token install-plugin ssh:158.ve2a_e90fb_7319
-(the url can be verified in the Jenkins CLI tab in the prev step)
+                       (the url can be verified in the Jenkins CLI tab in the prev step)
 
                     -> API Token
                             -> Click Username -> Security -> Generate new Token
