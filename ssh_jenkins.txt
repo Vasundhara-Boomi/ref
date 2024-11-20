@@ -17,13 +17,13 @@ Open Jenkins in your web browser.
 Configure SSH in Jenkins:
             - Go to Manage Jenkins > Configure System.
             - Scroll down to the SSH remote hosts section and click Add.
+
             - Enter the following details:
-                      - Name: Give this configuration a unique name (e.g., "Remote Server SSH").
                       - Hostname: Enter the IP address of the remote system.
-                      - Username: Enter the username for SSH access on the remote system.
-                      - Private Key:
-                            Click Add and select Enter Directly.
-                            Copy and paste the contents of your private key file (~/.ssh/id_rsa) into the text area.
+                      - Port: 22
+                      - Credentials:
+                            Username: Enter the username for SSH access on the remote system.
+                            Password: Enter the system password
                       - Click Save to save your SSH configuration.
 
 Create a Jenkins Job to Run the Script via SSH:
