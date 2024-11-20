@@ -31,8 +31,8 @@ Create a Jenkins Job to Run the Script via SSH:
           - Enter a name of project ("Run Remote Script") -> select Freestyle project.
           - Click "OK"
           - Configure the Job
-          - Under Build, click Add build step -> select Execute shell.
-              In the shell command box, enter the SSH command:
-              ssh username@remote_ip_address 'bash ~/test_script.sh'
+          - Under Build, click Add build step -> select Execute shell script on remote host using ssh.
+              In command box, enter the command:
+              - bash ~/test_script.sh
           - Save
           - Build Now
