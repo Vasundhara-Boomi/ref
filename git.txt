@@ -1,0 +1,38 @@
+Merge Conflict
+
+create a repo in your git
+
+git clone "git link"
+
+
+echo 'public class Demo {
+    public static void main(String[] args) {
+        System.out.println("Original code");
+    }
+}' > Demo.java
+
+
+git add Demo.java
+git commit -m "Initial commit"
+
+git checkout -b feature-branch
+
+change :System.out.println("Feature branch modification");
+
+git add Demo.java
+git commit -m "Modify Demo.java in feature-branch"
+
+git checkout main
+
+again change:System.out.println("Main branch modification");
+
+git add Demo.java
+git commit -m "Modify Demo.java in main branch"
+
+git merge feature-branch
+
+then merge conflicts occurs which is shown in terminal
+
+git add .
+git commit -m "new msg"
+git push origin main
