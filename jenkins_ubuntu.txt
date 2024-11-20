@@ -1,3 +1,5 @@
+Jenkins Ubuntu Installation
+
 sudo apt update
 
 sudo apt-get install fontconfig openjdk-17-jre (if Java doesnt exist)
