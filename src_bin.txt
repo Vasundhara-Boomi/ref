@@ -1,3 +1,33 @@
+project/
+├── src/
+│   └── Test.java
+├── bin/   (optional: can be empty initially)
+
+Test.java :
+public class Test {
+    public static void main(String[] args) {
+        System.out.println("Hello, Jenkins!");
+    }
+}
+
+Jenkins :
+
+New Item
+    -> <Job-Name> and Freestyle Proj
+        -> Ok
+    -> Build -> Click Add build step 
+             -> Execute Windows batch command (Windows) 
+             -> Execute shell (Ubuntu)
+
+Place your project files (src folder) in the Jenkins workspace:
+
+-> C:\Users\<user>\.jenkins\workspace\<Your-Job-Name> (Windows)
+-> /var/lib/jenkins/workspace/<Your-Job-Name> (Ubuntu)
+
+Permissions: sudo chmod -R 777 /var/lib/jenkins/workspace/<Your-Job-Name>
+
+-- WINDOWS SCRIPT: 
+
 @echo off
 
 :: Set your project directories
@@ -14,6 +44,7 @@ javac -d %BIN_DIR% %SRC_DIR%\*.java
 echo Compiled files:
 dir %BIN_DIR%
 
+-- UBUNTU SCRIPT :
 
 #!/bin/bash
 
