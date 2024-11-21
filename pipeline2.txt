@@ -23,29 +23,23 @@ import sys
 
 def main():
     if len(sys.argv) != 4:
-        print("Usage: python Add.py <num1> <num2> <operation>")
-        sys.exit(1)
-
-    num1 = float(sys.argv[1])
-    num2 = float(sys.argv[2])
-    operation = sys.argv[3].lower()
+        print("Usage: python addition.py <num1> <num2> <op>")
+        return
 
     try:
-        if operation == "add":
-            result = num1 + num2
-        elif operation == "subtract":
-            result = num1 - num2
-        elif operation == "multiply":
-            result = num1 * num2
-        elif operation == "divide":
-            result = num1 / num2
-        else:
-            print("Invalid operation. Use add, subtract, multiply, or divide.")
-            sys.exit(1)
-        print(f"Result: {result}")
-    except Exception as e:
-        print(f"Error: {e}")
-        sys.exit(1)
+        num1 = float(sys.argv[1])
+        num2 = float(sys.argv[2])
+        op=sys.argv[3]
+        if op=="add":
+            print(f"The sum is: {num1 + num2}")
+        elif op=="sub":
+            print(f"The diff is: {num1 - num2}")
+        elif op=="mul":
+            print(f"The prod is: {num1 * num2}")
+        elif op=="div":
+            print(f"The quotient is: {num1 / num2}")
+    except ValueError:
+        print("Error: Please provide valid numbers.")
 
 if __name__ == "__main__":
     main()
