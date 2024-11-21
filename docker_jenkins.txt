@@ -1,0 +1,38 @@
+Install docker and Jenkins in Ubuntu
+
+sudo usermod -aG docker jenkins
+sudo systemctl restart jenkins
+
+New Item -> Free style proj -> OK
+
+Build Step -> Execute Shell
+  
+  docker build -t flaskapp .
+  sudo docker run -d -p 5000:5000 flaskapp
+
+  
+
+Place these in the location /var/lib/jenkins/workspace/<job_name>
+
+app.py:
+from flask import Flask
+app = Flask(__name__)
+@app.route('/')
+def hello():
+    return "Hello, this is a Flask web server!"
+if __name__ == "__main__":
+    app.run(host='0.0.0.0', port=5000)
+
+
+requirements.txt:
+Flask>=2.0,<3.0
+Werkzeug>=2.0,<3.0
+
+Dockerfile:
+FROM python:3.9
+WORKDIR /app
+COPY . /app
+RUN pip install --no-cache-dir -r requirements.txt
+EXPOSE 5000
+ENV NAME FlaskApp
+CMD ["python", "app.py"]
