@@ -1,0 +1,60 @@
+Ubuntu Jenkins Pipeline-
+
+sudo apt-get install git
+git --version
+
+sudo apt update
+sudo apt install openjdk-11-jdk
+javac -version
+
+export JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64
+export PATH=$JAVA_HOME/bin:$PATH
+
+source ~/.bashrc
+
+
+New Item 
+    -> pipeline
+            -> click "OK"
+
+Configure
+    -> Pipeline
+          -> Definition: Pipeline script from SCM
+          -> SCM : Git
+          -> Github repo
+          -> Credentials -> Jenkins -> Username and Pswd
+          -> Branch : */main
+          -> Script path : jenkins.txt
+    -> SAVE
+
+
+To be uploaded in Github repo:
+
+Test.java :
+
+class Test {
+    public static void main(String[] args) {
+        System.out.println("Hello World!!");
+    }
+}
+
+jenkins.txt :
+
+pipeline {
+  agent any
+  stages {
+    stage('version') {
+      steps {
+	echo 'Stage Version'
+        
+      }
+    }
+    stage('hello') {
+      steps {
+	echo 'Stage Hello'
+        sh 'javac Test.java'
+	sh 'java Test'
+      }
+    }
+  }
+}
