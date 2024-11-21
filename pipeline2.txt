@@ -8,7 +8,12 @@ echo $PATH -> python3 --version
 sudo chmod +x /usr/bin/python3
 sudo chown jenkins:jenkins /usr/bin/python3
 
+New Item".
+Select "Pipeline" and provide a name.
 
+Build with Parameters:
+Click on "Build with Parameters" on the pipeline page.
+Provide values for NUM1, NUM2, and operation.
 
 
 
