@@ -30,8 +30,12 @@ In the same file under authentication, if u see authentication password prohibit
 
 Save it and exit
 
+sudo systemctl restart sshd
+
 Sudo ufw enable 2222/tcp
 Sudo ufw reload 
+
+scp -p 2222 user@127.0.0.1
 
 This is to enable the incoming connection to the port over firewall
 scp -P port_no file_name user@localhost:destination_path
