@@ -16,3 +16,22 @@ Steps
     - chmod +x ~/test_script.sh
     
     - Run the shell script: ssh username@remote_ip_address 'bash ~/test_script.sh'
+
+
+
+Different port numbers:
+
+Sudo nano /etc/ssh/sshd_config
+
+In this wherever u see port no :22
+Change it to port 2222 (for example) 
+
+In the same file under authentication, if u see authentication password prohibit, change it authentication yes
+
+Save it and exit
+
+Sudo ufw enable 2222/tcp
+Sudo ufw reload 
+
+This is to enable the incoming connection to the port over firewall
+scp -P port_no file_name user@localhost:destination_path
